@@ -1,9 +1,9 @@
 {
-  "name": "plugin-sample-vite",
+  "name": "sy-line-height",
   "author": "frostime",
-  "url": "https://github.com/frostime/plugin-sample-vite",
-  "version": "0.2.6",
-  "minAppVersion": "2.10.12",
+  "url": "https://github.com/frostime/sy-line-height",
+  "version": "1.0.0",
+  "minAppVersion": "2.10.1",
   "backends": [
     "windows",
     "linux",
@@ -14,12 +14,12 @@
     "desktop-window"
   ],
   "displayName": {
-    "en_US": "Plugin sample with vite",
-    "zh_CN": "插件样例 vite 版"
+    "en_US": "Adjust line height",
+    "zh_CN": "行高调整"
   },
   "description": {
-    "en_US": "SiYuan plugin sample with vite",
-    "zh_CN": "使用 vite 开发的思源插件样例"
+    "en_US": "Adjust line height in editor",
+    "zh_CN": "调整编辑器行高"
   },
   "readme": {
     "en_US": "README.md",

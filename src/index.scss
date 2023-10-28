@@ -1,26 +1,15 @@
-#helloPanel {
-    border: 1px rgb(189, 119, 119) dashed;
+:root {
+    --costom-line-height: 1.625;
+    --costom-node-margin: 2px;
 }
 
-.plugin-sample {
-    &__custom-tab {
-        background-color: var(--b3-theme-background);
-        height: 100%;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+
+#layouts div.layout-tab-container > div.protyle > div.protyle-content > div.protyle-wysiwyg {
+    div[data-node-id].p {
+        line-height: var(--costom-line-height) !important;
     }
 
-    &__custom-dock {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    &__time {
-        background: var(--b3-card-info-background);
-        border-radius: 4px;
-        padding: 2px 8px;
+    div[data-node-id] {
+        margin: var(--costom-node-margin) 0 !important;
     }
 }
