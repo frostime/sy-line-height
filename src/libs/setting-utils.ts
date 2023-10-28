@@ -3,7 +3,7 @@
  * @Author       : frostime
  * @Date         : 2023-09-16 18:05:00
  * @FilePath     : /src/libs/setting-utils.ts
- * @LastEditTime : 2023-10-28 16:28:34
+ * @LastEditTime : 2023-10-28 16:38:22
  * @Description  : A utility for siyuan plugin settings
  */
 
@@ -47,7 +47,7 @@ export class SettingUtils {
             }
         }
         this.plugin.data[this.name] = this.dump();
-        console.log(data);
+        console.debug('Load config:', data);
         return data;
     }
 

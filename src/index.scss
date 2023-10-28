@@ -1,15 +1,11 @@
 :root {
-    --costom-line-height: 1.625;
-    --costom-node-margin: 2px;
+    --custom-line-height: 1.625;
+    // --custom-node-margin: 2px;
 }
 
 
 #layouts div.layout-tab-container > div.protyle > div.protyle-content > div.protyle-wysiwyg {
-    div[data-node-id].p {
-        line-height: var(--costom-line-height) !important;
-    }
-
-    div[data-node-id] {
-        margin: var(--costom-node-margin) 0 !important;
+    [data-node-id].p {
+        line-height: var(--custom-line-height) !important;
     }
 }
