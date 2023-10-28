@@ -1,8 +1,8 @@
 {
   "name": "sy-line-height",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
-  "description": "This is a sample plugin based on vite and svelte for Siyuan (https://b3log.org/siyuan)",
+  "description": "",
   "repository": "",
   "homepage": "",
   "author": "",

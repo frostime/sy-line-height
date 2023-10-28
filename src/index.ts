@@ -3,7 +3,7 @@
  * @Author       : Yp Z
  * @Date         : 2023-10-27 21:37:07
  * @FilePath     : /src/index.ts
- * @LastEditTime : 2023-10-28 17:25:34
+ * @LastEditTime : 2023-10-28 18:04:44
  * @Description  : Adjust the line height of siyuan editor`
  */
 import {
@@ -11,6 +11,8 @@ import {
     getFrontend,
 } from "siyuan";
 import "@/index.scss";
+
+import * as ZH_CN from "./i18n/zh_CN.json";
 
 
 import { SettingUtils } from "./libs/setting-utils";
@@ -22,6 +24,8 @@ export default class LineHeightPlugin extends Plugin {
     isMobile: boolean;
     settingUtils: SettingUtils;
     onSettingUpdatedBindThis = this.onSettingUpdated.bind(this);
+
+    declare i18n: typeof ZH_CN;
 
     async onload() {
 
@@ -35,8 +39,8 @@ export default class LineHeightPlugin extends Plugin {
             key: "line-height",
             value: 1.625,
             type: "slider",
-            title: "块内行高",
-            description: "编辑器段落块内行高, line-height",
+            title: this.i18n.lineHeight.title,
+            description: this.i18n.lineHeight.description,
             slider: {
                 min: 1,
                 max: 2.5,
@@ -47,8 +51,8 @@ export default class LineHeightPlugin extends Plugin {
             key: "node-margin",
             value: 2,
             type: "slider",
-            title: "块间距",
-            description: "编辑器段落块之间的上下间距, margin-bottom magin-top",
+            title: this.i18n.nodeMargin.title,
+            description: this.i18n.nodeMargin.description,
             slider: {
                 min: 0,
                 max: 5,
@@ -58,11 +62,11 @@ export default class LineHeightPlugin extends Plugin {
         this.settingUtils.addItem({
             key: "reset",
             type: "button",
-            title: '重置',
-            description: '',
+            title: this.i18n.reset.title,
+            description: this.i18n.reset.description,
             value: null,
             button: {
-                label: "Reset",
+                label: this.i18n.reset.title,
                 callback: () => {
                     const eleHeight: HTMLInputElement = this.settingUtils.elements.get('line-height') as HTMLInputElement;
                     eleHeight.value = '1.625';

@@ -2,7 +2,7 @@
   "name": "sy-line-height",
   "author": "frostime",
   "url": "https://github.com/frostime/sy-line-height",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "minAppVersion": "2.10.1",
   "backends": [
     "windows",
@@ -30,7 +30,7 @@
       "https://afdian.net/a/frostime"
     ]
   },
-  "keyword": [
+  "keywords": [
     "line", "height", "margin", "行高", "段落", "高度"
   ]
 }
