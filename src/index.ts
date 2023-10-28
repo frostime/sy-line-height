@@ -3,7 +3,7 @@
  * @Author       : Yp Z
  * @Date         : 2023-10-27 21:37:07
  * @FilePath     : /src/index.ts
- * @LastEditTime : 2023-10-28 16:36:14
+ * @LastEditTime : 2023-10-28 17:25:34
  * @Description  : Adjust the line height of siyuan editor`
  */
 import {
@@ -29,27 +29,50 @@ export default class LineHeightPlugin extends Plugin {
         this.isMobile = frontEnd === "mobile" || frontEnd === "browser-mobile";
 
         this.settingUtils = new SettingUtils(
-            this, CONFIG_FILE_NAME, this.onSettingUpdatedBindThis, null, '15rem'
+            this, CONFIG_FILE_NAME, this.onSettingUpdatedBindThis, null, '20rem'
         );
         this.settingUtils.addItem({
-            key: "Check",
-            value: true,
-            type: "checkbox",
-            title: "Checkbox text",
-            description: "Check description",
-        });
-        this.settingUtils.addItem({
-            key: "height",
+            key: "line-height",
             value: 1.625,
             type: "slider",
-            title: "Line height",
-            description: "Slider description",
+            title: "块内行高",
+            description: "编辑器段落块内行高, line-height",
             slider: {
                 min: 1,
-                max: 3,
+                max: 2.5,
                 step: 0.025,
             }
         });
+        this.settingUtils.addItem({
+            key: "node-margin",
+            value: 2,
+            type: "slider",
+            title: "块间距",
+            description: "编辑器段落块之间的上下间距, margin-bottom magin-top",
+            slider: {
+                min: 0,
+                max: 5,
+                step: 0.5,
+            }
+        })
+        this.settingUtils.addItem({
+            key: "reset",
+            type: "button",
+            title: '重置',
+            description: '',
+            value: null,
+            button: {
+                label: "Reset",
+                callback: () => {
+                    const eleHeight: HTMLInputElement = this.settingUtils.elements.get('line-height') as HTMLInputElement;
+                    eleHeight.value = '1.625';
+                    eleHeight.ariaLabel = '1.625';
+                    const eleMargin: HTMLInputElement = this.settingUtils.elements.get('node-margin') as HTMLInputElement;
+                    eleMargin.value = '2';
+                    eleMargin.ariaLabel = '2';
+                }
+            }
+        })
         this.settingUtils.load();
     }
 
@@ -57,7 +80,12 @@ export default class LineHeightPlugin extends Plugin {
         console.debug('Update config', data);
         this.data[CONFIG_FILE_NAME] = data;
         this.saveData(CONFIG_FILE_NAME, this.data[CONFIG_FILE_NAME]);
-        document.documentElement.style.setProperty('--custom-line-height', this.data[CONFIG_FILE_NAME].height);
+        document.documentElement.style.setProperty(
+            '--custom-line-height', this.data[CONFIG_FILE_NAME]['line-height']
+        );
+        document.documentElement.style.setProperty(
+            '--custom-node-margin-tb', `${this.data[CONFIG_FILE_NAME]['node-margin']}px`
+        );
     }
 
 }

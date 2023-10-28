@@ -1,11 +1,22 @@
 :root {
     --custom-line-height: 1.625;
-    // --custom-node-margin: 2px;
+    --custom-node-margin-tb: 5px;
 }
 
+.b3-typography p, .b3-typography [data-node-id], .protyle-wysiwyg p, .protyle-wysiwyg [data-node-id] [spellcheck] {
+    line-height: var(--custom-line-height);
+}
 
 #layouts div.layout-tab-container > div.protyle > div.protyle-content > div.protyle-wysiwyg {
-    [data-node-id].p {
+    p {
         line-height: var(--custom-line-height) !important;
+    }
+    [data-node-id] {
+        margin-top: var(--custom-node-margin-tb);
+        margin-bottom: var(--custom-node-margin-tb);
+
+        &.p {
+            line-height: var(--custom-line-height) !important;
+        }
     }
 }

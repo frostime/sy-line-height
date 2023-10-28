@@ -29,5 +29,8 @@
     "custom": [
       "https://afdian.net/a/frostime"
     ]
-  }
+  },
+  "keyword": [
+    "line", "height", "margin", "行高", "段落", "高度"
+  ]
 }
