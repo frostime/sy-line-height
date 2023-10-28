@@ -1,5 +1,7 @@
 # Adjusting line height
 
+You can config following items in the setting panel of this plugin:
+
 - The line height inside a paragraph block
 - The margin bewteen blocks
 
