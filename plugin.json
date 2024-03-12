@@ -2,16 +2,13 @@
   "name": "sy-line-height",
   "author": "frostime",
   "url": "https://github.com/frostime/sy-line-height",
-  "version": "1.1.0",
-  "minAppVersion": "2.10.1",
+  "version": "1.2.0",
+  "minAppVersion": "3.0.0",
   "backends": [
-    "windows",
-    "linux",
-    "darwin"
+    "all"
   ],
   "frontends": [
-    "desktop",
-    "desktop-window"
+    "all"
   ],
   "displayName": {
     "en_US": "Adjust line height",
