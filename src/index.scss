@@ -18,5 +18,9 @@
         &.p {
             line-height: var(--custom-line-height) !important;
         }
+
+        &.code-block .protyle-linenumber__rows {
+            line-height: var(--custom-line-height);
+        }
     }
 }
