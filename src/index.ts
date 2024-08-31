@@ -3,7 +3,7 @@
  * @Author       : Yp Z
  * @Date         : 2023-10-27 21:37:07
  * @FilePath     : /src/index.ts
- * @LastEditTime : 2023-10-28 18:04:44
+ * @LastEditTime : 2024-08-31 20:24:18
  * @Description  : Adjust the line height of siyuan editor`
  */
 import {
@@ -12,7 +12,7 @@ import {
 } from "siyuan";
 import "@/index.scss";
 
-import * as ZH_CN from "./i18n/zh_CN.json";
+import type * as ZH_CN from "./i18n/zh_CN.json";
 
 
 import { SettingUtils } from "./libs/setting-utils";
@@ -77,13 +77,18 @@ export default class LineHeightPlugin extends Plugin {
                 }
             }
         })
-        this.settingUtils.load();
+        await this.settingUtils.load();
+        this.updateStyle();
     }
 
     onSettingUpdated(data: any) {
         console.debug('Update config', data);
         this.data[CONFIG_FILE_NAME] = data;
         this.saveData(CONFIG_FILE_NAME, this.data[CONFIG_FILE_NAME]);
+        this.updateStyle();
+    }
+
+    private updateStyle() {
         document.documentElement.style.setProperty(
             '--custom-line-height', this.data[CONFIG_FILE_NAME]['line-height']
         );
