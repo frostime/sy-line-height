@@ -19,8 +19,17 @@
             line-height: var(--custom-line-height) !important;
         }
 
-        &.code-block .protyle-linenumber__rows {
-            line-height: var(--custom-line-height);
-        }
+        // &.code-block .protyle-linenumber__rows {
+        //     line-height: calc(var(--custom-line-height) * 1em);
+        // }
     }
+}
+
+/**
+ * After SiYuan 3.1.5, the code block has changed its DOM structure.
+ * The line numbers and code body have different font sizes, making it hard to align them with the same line-height, as line-height is a ratio without a unit (px, rem).
+ * Here, we temporarily skip the line-height setting for the code block.
+ */
+.protyle-wysiwyg [data-node-id].code-block [spellcheck] {
+    line-height: inherit;
 }
