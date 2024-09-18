@@ -1,16 +1,21 @@
 :root {
     --custom-line-height: 1.625;
     --custom-node-margin-tb: 5px;
+    --protyle-font-size: 16px;
 }
 
-.b3-typography p, .b3-typography [data-node-id], .protyle-wysiwyg p, .protyle-wysiwyg [data-node-id] [spellcheck] {
+.b3-typography p,
+.b3-typography [data-node-id],
+.protyle-wysiwyg p,
+.protyle-wysiwyg [data-node-id] [spellcheck] {
     line-height: var(--custom-line-height);
 }
 
-#layouts div.layout-tab-container > div.protyle > div.protyle-content > div.protyle-wysiwyg {
+#layouts div.layout-tab-container>div.protyle>div.protyle-content>div.protyle-wysiwyg {
     p {
         line-height: var(--custom-line-height) !important;
     }
+
     [data-node-id] {
         margin-top: var(--custom-node-margin-tb);
         margin-bottom: var(--custom-node-margin-tb);
@@ -22,6 +27,11 @@
         // &.code-block .protyle-linenumber__rows {
         //     line-height: calc(var(--custom-line-height) * 1em);
         // }
+    }
+
+    // 列表项的 action 图标，和内容块对齐
+    div.li[data-node-id] > div.protyle-action {
+        top: calc((var(--custom-line-height) - 1.625) * var(--protyle-font-size));
     }
 
     .av__cell[data-dtype="text"][data-wrap="true"] {
