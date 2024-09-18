@@ -23,6 +23,10 @@
         //     line-height: calc(var(--custom-line-height) * 1em);
         // }
     }
+
+    .av__cell[data-dtype="text"][data-wrap="true"] {
+        line-height: var(--custom-line-height);
+    }
 }
 
 /**
