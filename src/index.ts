@@ -3,7 +3,7 @@
  * @Author       : Yp Z
  * @Date         : 2023-10-27 21:37:07
  * @FilePath     : /src/index.ts
- * @LastEditTime : 2024-09-18 22:10:17
+ * @LastEditTime : 2025-01-26 16:50:33
  * @Description  : Adjust the line height of siyuan editor`
  */
 import {
@@ -19,7 +19,13 @@ import { SettingUtils } from "./libs/setting-utils";
 const CONFIG_FILE_NAME = "config.json";
 
 const basicFontsize = () => {
-    const fontSize = window.getComputedStyle(document.body).fontSize;
+    // const fontSize = window.getComputedStyle(document.body).fontSize;
+    // return fontSize;
+    //@ts-config
+    let fontSize = window?.siyuan?.config.editor.fontSize + 'px';
+    if (!fontSize) {
+        fontSize = window.getComputedStyle(document.body).fontSize;
+    }
     return fontSize;
 }
 

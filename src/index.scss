@@ -23,15 +23,20 @@
         &.p {
             line-height: var(--custom-line-height) !important;
         }
-
-        // &.code-block .protyle-linenumber__rows {
-        //     line-height: calc(var(--custom-line-height) * 1em);
-        // }
     }
 
     // 列表项的 action 图标，和内容块对齐
-    div.li[data-node-id] > div.protyle-action {
-        top: calc((var(--custom-line-height) - 1.625) * var(--protyle-font-size));
+    div.li[data-node-id] {
+        --list-action-offset-line-heigth: calc((var(--custom-line-height) - 1.625) * var(--protyle-font-size) / 2);
+        --list-action-offset-sum: calc(var(--list-action-offset-line-heigth) + var(--custom-node-margin-tb));
+        > div.protyle-action {
+            top: var(--list-action-offset-sum);
+        }
+        &::before {
+            --origin-height: 37px;
+            top: calc(var(--origin-height) + var(--list-action-offset-sum));
+            // height: calc(100% - var(--origin-height) - var(--list-action-offset-sum));
+        }
     }
 
     .av__cell[data-dtype="text"][data-wrap="true"] {

@@ -78,5 +78,6 @@ interface Window {
         user: any;
         ws: any;
         languages: any;
+        config: any;
     };
 }

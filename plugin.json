@@ -2,8 +2,8 @@
   "name": "sy-line-height",
   "author": "frostime",
   "url": "https://github.com/frostime/sy-line-height",
-  "version": "1.6.0",
-  "minAppVersion": "3.0.10",
+  "version": "1.7.0",
+  "minAppVersion": "3.1.10",
   "backends": [
     "all"
   ],
@@ -24,7 +24,7 @@
   },
   "funding": {
     "custom": [
-      "https://afdian.net/a/frostime"
+      "https://afdian.com/a/frostime"
     ]
   },
   "keywords": [
